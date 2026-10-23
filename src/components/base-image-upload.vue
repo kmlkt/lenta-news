@@ -6,13 +6,14 @@ import { ref } from "vue";
 const userStore = useUserStore();
 const model = defineModel<string[]>({ default: () => [] });
 
-const fileInput = ref(null);
+const fileInput = ref<HTMLInputElement | null>(null);
 
 const triggerFileInput = () => {
-  fileInput.value.click();
+  fileInput.value!.click();
 };
 
-const onFileChange = async (event) => {
+const onFileChange = async (event: Event) => {
+  // @ts-expect-error asas
   const files: File[] = Array.from(event.target.files);
   if (!files.length) return;
   const newValue = [...model.value];
