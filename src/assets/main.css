@@ -1,0 +1,14 @@
+@import "./reset.css";
+
+:root {
+  font-family: "Montserrat", sans-serif;
+  --blue: #5300d6;
+  --red: #ff8000;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px;
+}
