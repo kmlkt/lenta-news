@@ -76,15 +76,15 @@ const topics = computed(() => [...new Set(postStore.all.map((x) => x.topic))]);
     </div>
 
     <!-- Окно подтверждения -->
-    <BaseModal
-      :is-open="isLogoutModalOpen"
-      title="Выход из аккаунта"
-      @close="isLogoutModalOpen = false"
-      @confirm="handleLogout"
-    >
-      Вы действительно хотите выйти из своего аккаунта?
-    </BaseModal>
   </aside>
+  <BaseModal
+    :is-open="isLogoutModalOpen"
+    title="Выход из аккаунта"
+    @close="isLogoutModalOpen = false"
+    @confirm="handleLogout"
+  >
+    Вы действительно хотите выйти из своего аккаунта?
+  </BaseModal>
   <div v-if="sidebarStore.sidebarOpen" class="overlay" @click="isMenuOpen = false" />
 </template>
 
